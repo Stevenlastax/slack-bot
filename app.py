@@ -10,7 +10,7 @@ client = slack.WebClient(token=SLACK_TOKEN)
 slack_events_adapter = SlackEventAdapter(SLACK_SIGNING_SECRET, endpoint="/slack/events")
 
 def send_message(message):
-    response = client.chat_postMessage(channel='#sla-bot-testing', text=message)
+    response = client.chat_postMessage(channel='#CHANNEL_NAME', text=message)
     print(response["ok"])
 
 @slack_events_adapter.on("reaction_added")
